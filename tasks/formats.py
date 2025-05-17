@@ -10,14 +10,14 @@ from invoke.tasks import task
 
 @task
 def imports(ctx: Context) -> None:
-    """Format python imports with ruff."""
-    ctx.run("uv run ruff check --select I --fix")
+    """Format python imports with isort."""
+    ctx.run("uv run isort src/ tasks/ tests/")
 
 
 @task
 def sources(ctx: Context) -> None:
-    """Format python sources with ruff."""
-    ctx.run("uv run ruff format src/ tasks/ tests/")
+    """Format python sources with black."""
+    ctx.run("uv run black src/ tasks/ tests/")
 
 
 @task(pre=[imports, sources], default=True)

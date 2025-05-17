@@ -54,9 +54,7 @@ def test(ctx: Context) -> None:
 @task
 def security(ctx: Context) -> None:
     """Check the security with bandit."""
-    ctx.run(
-        "uv run bandit --recursive --configfile=pyproject.toml src/", pty=True
-    )
+    ctx.run("uv run bandit --recursive --configfile=pyproject.toml src/", pty=True)
 
 
 @task

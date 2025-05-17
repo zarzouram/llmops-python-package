@@ -70,7 +70,8 @@ checks = [
     "pytest>=8.2.2",
     "pytest-cov>=5.0.0",
     "pytest-xdist>=3.6.1",
-    "ruff>=0.5.0",
+    "black>=24.2.0",
+    "isort>=5.13.2",
 ]
 commits = [
     "commitizen>=3.27.0",
@@ -128,21 +129,17 @@ filterwarnings = [
     "ignore:Pydantic V1 style `@root_validator` validators are deprecated:DeprecationWarning"
 ]
 
-
-[tool.ruff]
-fix = true
-indent-width = 4
+[tool.black]
 line-length = 100
-target-version = "py312"
+target-version = ["py312"]
+include = '\.pyi?$'
 
-[tool.ruff.format]
-docstring-code-format = true
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
-
-[tool.ruff.lint.per-file-ignores]
-"tests/*.py" = ["D100", "D103"]
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+known_first_party = ["llmops_project"]
 
 # SYSTEMS
 
