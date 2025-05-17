@@ -1,0 +1,5 @@
+[uv]
+# UV project configuration
+package-dir = "src"
+package-name = "llmops_project"
+python-version = "3.12"

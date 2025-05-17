@@ -63,7 +63,9 @@ def get_topics_present(text: str, topics: List[str]) -> List[str]:
         List[str]: A list of topics that are present in the text. If no topics are found, returns an empty list.
 
     Example:
-        >>> text = "Artificial intelligence and machine learning are transforming the tech industry."
+        >>> text = (
+        ...     "Artificial intelligence and machine learning are transforming the tech industry."
+        ... )
         >>> topics = ["artificial intelligence", "machine learning", "blockchain"]
         >>> get_topics_present(text, topics)
         ['artificial intelligence', 'machine learning']

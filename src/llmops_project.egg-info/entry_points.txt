@@ -1,0 +1,2 @@
+[console_scripts]
+llmops-project = llmops_project.scripts:main

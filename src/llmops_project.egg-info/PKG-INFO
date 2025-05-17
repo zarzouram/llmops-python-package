@@ -1,3 +1,37 @@
+Metadata-Version: 2.4
+Name: llmops-project
+Version: 0.2.0
+Summary: LLMOps Package Production Ready template using open source technologies.
+Author: callmesora
+License: MIT
+Project-URL: repository, https://github.com/callmesora/llmops-project
+Project-URL: documentation, https://callmesora.github.io/llmops-project/
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: <3.13,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+Provides-Extra: checks
+Requires-Dist: bandit>=1.7.9; extra == "checks"
+Requires-Dist: coverage>=7.5.4; extra == "checks"
+Requires-Dist: mypy>=1.10.1; extra == "checks"
+Requires-Dist: pytest>=8.2.2; extra == "checks"
+Requires-Dist: pytest-cov>=5.0.0; extra == "checks"
+Requires-Dist: pytest-xdist>=3.6.1; extra == "checks"
+Requires-Dist: ruff>=0.5.0; extra == "checks"
+Provides-Extra: commits
+Requires-Dist: commitizen>=3.27.0; extra == "commits"
+Requires-Dist: pre-commit>=3.7.1; extra == "commits"
+Provides-Extra: dev
+Requires-Dist: invoke>=2.2.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: pdoc>=14.5.1; extra == "docs"
+Provides-Extra: notebooks
+Requires-Dist: ipykernel>=6.29.4; extra == "notebooks"
+Requires-Dist: nbformat>=5.10.4; extra == "notebooks"
+Dynamic: license-file
+
 # LLMOps Python Pacakge
 
 [![check.yml](https://github.com/callmesora/llmops-python-package/actions/workflows/check.yml/badge.svg)](https://github.com/callmesora/llmops-python-package/actions/workflows/check.yml)
@@ -237,8 +271,8 @@ These metrics are also saved with a display in case you want to load it in a das
 In production, you can build, ship, and run the project as a Python package:
 
 ```bash
-python -m build --wheel .
-pip install dist/*.whl  # optional
+poetry build
+poetry publish # optional
 python -m pip install [package]
 [package] confs/deployment.yaml
 ```
@@ -320,7 +354,7 @@ $ inv --list
 - **formats.imports** - Format python imports with ruff.
 - **formats.sources** - Format python sources with ruff.
 - **installs.all (installs)** - Run all install tasks.
-- **installs.uv** - Install packages with uv.
+- **installs.poetry** - Install poetry packages.
 - **installs.pre-commit** - Install pre-commit hooks on git.
 - **mlflow.all (mlflow)** - Run all mlflow tasks.
 - **mlflow.doctor** - Run mlflow doctor to diagnose issues.
@@ -422,12 +456,12 @@ Using Python package for your AI/ML project has the following benefits:
 - Install Python package as a library (e.g., like pandas)
 - Expose script entry points to run a CLI or a GUI
 
-To build a Python package with UV, you simply have to type in a terminal:
+To build a Python package with Poetry, you simply have to type in a terminal:
 
 ```bash
-# Using the Python build module
-python -m build --wheel .
-# For this project using invoke task
+# for all poetry project
+poetry build
+# for this project only
 inv packages
 ```
 

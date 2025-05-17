@@ -1,0 +1,14 @@
+LICENCE.txt
+README.md
+pyproject.toml
+src/llmops_project/__init__.py
+src/llmops_project/__main__.py
+src/llmops_project/scripts.py
+src/llmops_project/settings.py
+src/llmops_project.egg-info/PKG-INFO
+src/llmops_project.egg-info/SOURCES.txt
+src/llmops_project.egg-info/dependency_links.txt
+src/llmops_project.egg-info/entry_points.txt
+src/llmops_project.egg-info/requires.txt
+src/llmops_project.egg-info/top_level.txt
+tests/test_scripts.py
