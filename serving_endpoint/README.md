@@ -5,10 +5,10 @@ This project sets up a FastAPI server using `litserve` that loads the latest MLf
 ![ML Serving Endpoint](./imgs/litserve.png)
 
 ## ML Design Pattern
+
 In this example we will be looking at a realistic LLMOps example where we are loading a langchain  model from a model registry and serving it in a LitServe container
 
 ![ML Serving Endpoint](./imgs/litserve-deployment.png)
-
 
 ## MLflow Model Registry
 
@@ -16,13 +16,11 @@ MLflow Model Registry is a centralized repository to manage and deploy machine l
 
 ![ML Serving Endpoint](./imgs/model-registry.webp)
 
-
 ## Loading Model from Registry
 
 The server loads the latest model from the MLflow model registry. This pattern ensures that the most recent and validated model is always used for inference. The model is loaded at the server startup and is ready to serve predictions.
 
 ![ML Serving Endpoint](./imgs/model-registry.webp)
-
 
 ## Server Details
 
@@ -35,6 +33,7 @@ You can choose to deploy this on kubernetes or your cloud provider as well as at
 ## Instructions
 
 ## Setup ENV File
+
 Setup an .env file with the following variables
 
 ```.env
@@ -47,6 +46,7 @@ AWS_SECRET_ACCESS_KEY= ...
 AWS_REGION= ...
 
 ```
+
 ### Build the Docker Image
 
 To build the Docker image, run the following command:
@@ -54,6 +54,7 @@ To build the Docker image, run the following command:
 ```sh
 docker build --build-arg GUARDRAILS_TOKEN=$(grep GUARDRAILS_TOKEN .env | cut -d '=' -f2) -t litserve-model:latest .
 ```
+
 ### Run the Docker Image
 
 To run the Docker image, use the following command:
@@ -61,7 +62,3 @@ To run the Docker image, use the following command:
 ```sh
 docker run --env-file .env -p 8000:8000 litserve-model:latest
 ```
-
-
-
-

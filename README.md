@@ -10,7 +10,7 @@
 
 ![LLMOps Python Package](static/llmops.png)
 
-The package leverages several [tools](#tools) and [tips](#tips) to make your LLMOps experience as flexible, robust, productive as possible.
+The package leverages several [tools](#4-tools) and [tips](#5-tips) to make your LLMOps experience as flexible, robust, productive as possible.
 
 You can use this package as part of your LLMOps toolkit or platform (e.g., Model Registry, Experiment Tracking, Realtime Inference, ...).
 
