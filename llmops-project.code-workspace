@@ -15,17 +15,18 @@
 			"editor.codeActionsOnSave": {
 				"source.organizeImports": "explicit"
 			},
-			"editor.defaultFormatter": "charliermarsh.ruff",
+			"editor.defaultFormatter": "ms-python.black-formatter",
 		},
 	},
 	"extensions": {
 		"recommendations": [
-			"charliermarsh.ruff",
+			"ms-python.black-formatter",
 			"dchanco.vsc-invoke",
 			"ms-python.mypy-type-checker",
 			"ms-python.python",
 			"ms-python.vscode-pylance",
 			"redhat.vscode-yaml",
+			"ms-python.isort"
 		]
 	}
 }
